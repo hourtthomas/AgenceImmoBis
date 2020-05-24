@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{%block title 'Agence Lorem Ipsum'%}
+
+{% block body %}
+.<div class="jumbotron text-center">
+    <h1>Agence Lorem Ipsum</h1>
+    <p>Lorem Elsass ipsum Racing. porta Yo dû. amet météor in, Miss Dahlias mollis Pellentesque rossbolla sed id Morbi gewurztraminer s'guelt non varius barapli auctor, consectetur eleifend dolor rucksack sed hopla eget leverwurscht aliquam habitant baeckeoffe hopla tristique gal  knepfle libero. knack nullam yeuh. hopla hop Verdammi leo sit semper mänele libero, tellus placerat ac tchao bissame Richard Schirmeck risus, senectus flammekueche quam, purus geht's Spätzle wurscht ac schpeck merci vielmols Oberschaeffolsheim geïz elit jetz gehts los
+    </p>
+</div>
+<div class="container">
+
+    <h2>Les derniers biens</h2>
+    <div class="row flex">
+        {% for property in properties %}
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="{{ path ('property.show', {id: property.id, slug: property.slug})}}">{{property.title}}</a>
+                        </h5>
+                        <p class="card-text">{{property.city}}({{property.postalCode}})</p>
+                        <div class="text-primary" style="font-weight: bold; font-size: 2rem;">{{property.formatedPrice}}</div> 
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
